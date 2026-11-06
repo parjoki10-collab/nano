@@ -7,7 +7,7 @@ COPY package.json pnpm-lock.yaml .npmrc pnpm-workspace.yaml ./
 COPY scripts/ ./scripts/
 
 FROM base AS build
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 COPY . .
 RUN pnpm build
 

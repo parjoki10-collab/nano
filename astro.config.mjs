@@ -16,12 +16,6 @@ if (process.env.VERCEL) {
 }
 
 const getAdapter = () => {
-  if (process.env.CF_PAGES || process.env.CLOUDFLARE || process.env.WORKERS_CI || process.env.WRANGLER || process.env.DEPLOY_TARGET === 'cloudflare') {
-    return cloudflare();
-  }
-  if (process.env.VERCEL) {
-    return vercel();
-  }
   return node({
     mode: 'standalone',
   });
